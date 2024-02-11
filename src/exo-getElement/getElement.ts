@@ -1,4 +1,4 @@
-function getElement(arr: string[], index: number) {
+export function getElement(arr: string[], index: number) {
     return arr[index]
 }
 

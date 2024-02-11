@@ -1,4 +1,4 @@
-function getElementButBetter(
+export function getElement(
     param: {
         arr: string[],
         index: number
@@ -10,8 +10,8 @@ function getElementButBetter(
     return element
 }
 
-const response = getElementButBetter({
+const response = getElement({
     "arr": ["a", "b", "c", "d"],
-    "index": 2
+    "index": 3
 })
 console.log(response)
