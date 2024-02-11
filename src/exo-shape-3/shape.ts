@@ -8,6 +8,11 @@ export type Shape = {
     width?: number
 }
 
+/**
+ * If circle then there must be a radius.
+ * If square then there must be a sideLength
+ * If rectangle then there must be a height and a width
+ * */
 export function getArea(shape: Shape): number {
     switch (shape.type) {
         case "circle":
