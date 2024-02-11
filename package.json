@@ -10,9 +10,8 @@
     "run-exo-shape": "yarn build && node dist/exo-shape/shape-and-test.js",
     "run-exo-shape-2": "yarn build && node dist/exo-shape-2/test.js",
     "run-exo-shape-3": "yarn build && node dist/exo-shape-3/test.js",
-    "run-exo-shape-4": "yarn build && node dist/exo-shape-4/test.js"
-
-
+    "run-exo-shape-4": "yarn build && node dist/exo-shape-4/test.js",
+    "run-exo-getElement": "yarn build && node dist/exo-getElement/getElement.js"
   },
   "dependencies": {
     "@types/node": "^20.11.17",
