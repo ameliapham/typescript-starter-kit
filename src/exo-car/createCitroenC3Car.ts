@@ -22,18 +22,13 @@ export function createCitroenC3Car(
 
             // Question : with amountEur €, what percentage of tanks will be full?
 
-            // dieselPrice : 1.4€/l
-            // amountEur : 50€
-            // tankFillPercentage : 0%
-            // tankCapacity : 60 litre
+            const volumeAddedLiter = amountEur / dieselPricePerLiter; //liter
 
-            const volumeAddedLiter = amountEur / dieselPricePerLiter; // 50/1.4 = 35.7 liter
+            const volumePresentLiter = tankCapacity * car.tankFillPercentage / 100; //liter
 
-            const volumePresentLiter = tankCapacity * car.tankFillPercentage / 100; // 60 * 0 / 100 = 0 liter
+            const newVolumeLiter = volumePresentLiter + volumeAddedLiter; //liter 
 
-            const newVolumeLiter = volumePresentLiter + volumeAddedLiter; // 35.7 liter 
-
-            car.tankFillPercentage = newVolumeLiter * 100 / tankCapacity; // 35.7 * 100 / 60 = 59.5%
+            car.tankFillPercentage = newVolumeLiter * 100 / tankCapacity; //%
 
             // Case surplus
             const surplusLiter = newVolumeLiter - tankCapacity; //liter
@@ -45,7 +40,7 @@ export function createCitroenC3Car(
 
                 car.tankFillPercentage = 100; //%
 
-                const change = dieselPricePerLiter * surplusLiter; // eur
+                const change = dieselPricePerLiter * surplusLiter; //eur
 
                 return { change };
 
