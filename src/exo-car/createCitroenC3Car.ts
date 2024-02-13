@@ -18,7 +18,7 @@ export function createCitroenC3Car(
         "tankFillPercentage": 0, // %
         "putGaz": ({ amountEur }) => {
 
-            console.log(`We put ${amountEur}€ in Fuel`);
+            console.log(`I put ${amountEur}€ in fuel`);
 
             // Question : with amountEur €, what percentage of tank will be filled? How much change (if any) could be?
 
