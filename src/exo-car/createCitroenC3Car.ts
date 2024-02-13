@@ -73,7 +73,7 @@ export function createCitroenC3Car(
 
                 console.log(`Warning: You have traveled ${maxDistanceWithVolumePresentLiter.toFixed(2)}km with the remaining fuel. Remaining distance is ${remainingDistance.toFixed(2)}km. Please refuel!`)
 
-                // throw new Error("Not enough fuel")
+                throw new Error("Not enough fuel")
             }
 
 
