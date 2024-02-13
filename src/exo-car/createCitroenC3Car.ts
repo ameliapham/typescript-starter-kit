@@ -20,7 +20,7 @@ export function createCitroenC3Car(
 
             console.log(`We put ${amountEur}€ in Fuel`);
 
-            // Question : with amountEur €, what percentage of tanks will be full?
+            // Question : with amountEur €, what percentage of tank will be filled? How much change (if any) could be?
 
             const volumeAddedLiter = amountEur / dieselPricePerLiter; //liter
 
@@ -46,18 +46,31 @@ export function createCitroenC3Car(
 
             }
 
-            return { "change": 0 }
+            return { "change": 0 };
         },
         "drive": ({ distanceKm }) => {
 
-            console.log(`Driving for ${distanceKm}km`)
+            console.log(`Driving for ${distanceKm}km`);
+
+            // Question : After running distanceKm km, what percentage of tank will be?
+
+            const consumedFuelLiter = distanceKm * consumptionForOneHundredKm / 100; //liter
+
+            const volumePresentLiter = tankCapacity * car.tankFillPercentage / 100; //liter
+
+            const newVolumeLiter = volumePresentLiter - consumedFuelLiter;
+
+            if (newVolumeLiter <= 0) {
+
+                car.tankFillPercentage = 0;
+
+                throw new Error("Not enough fuel")
+            }
+
+            car.tankFillPercentage = newVolumeLiter * 100 / tankCapacity;
 
         }
     };
 
     return car;
 }
-
-const myCar = createCitroenC3Car({
-    "color": "pink"
-})
