@@ -58,16 +58,24 @@ export function createCitroenC3Car(
 
             const volumePresentLiter = tankCapacity * car.tankFillPercentage / 100; //liter
 
-            const newVolumeLiter = volumePresentLiter - consumedFuelLiter;
+            const newVolumeLiter = volumePresentLiter - consumedFuelLiter; //liter
+
+            car.tankFillPercentage = newVolumeLiter * 100 / tankCapacity;
+
 
             if (newVolumeLiter <= 0) {
 
                 car.tankFillPercentage = 0;
 
-                throw new Error("Not enough fuel")
+                const maxDistanceWithVolumePresentLiter = volumePresentLiter * 100 / consumptionForOneHundredKm //km
+                
+                const remainingDistance  = distanceKm - maxDistanceWithVolumePresentLiter //km
+
+                console.log(`Warning: You have traveled ${maxDistanceWithVolumePresentLiter.toFixed(2)}km with the remaining fuel. Remaining distance is ${remainingDistance.toFixed(2)}km. Please refuel!`)
+
+                // throw new Error("Not enough fuel")
             }
 
-            car.tankFillPercentage = newVolumeLiter * 100 / tankCapacity;
 
         }
     };
