@@ -12,7 +12,8 @@
     "run-exo-shape-3": "yarn build && node dist/exo-shape-3/test.js",
     "run-exo-shape-4": "yarn build && node dist/exo-shape-4/test.js",
     "run-exo-getElement": "yarn build && node dist/exo-getElement/getElement.js",
-    "run-exo-getElement-2": "yarn build && node dist/exo-getElement/getElement-2.js"
+    "run-exo-getElement-2": "yarn build && node dist/exo-getElement/getElement-2.js",
+    "run-exo-car": "yarn build && node dist/exo-car/test.js"
 
   },
   "dependencies": {
