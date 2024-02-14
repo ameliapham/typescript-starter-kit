@@ -14,7 +14,7 @@
     "run-exo-getElement": "yarn build && node dist/exo-getElement/getElement.js",
     "run-exo-getElement-2": "yarn build && node dist/exo-getElement/getElement-2.js",
     "run-exo-car": "yarn build && node dist/exo-car/testCitroenC3.js",
-    "run-exo-car-2": "yarn build && node dist/exo-car/testPeugeot208.js"
+    "run-exo-car-2": "yarn build && node dist/exo-car-2/testPeugeot208.js"
 
 
   },
