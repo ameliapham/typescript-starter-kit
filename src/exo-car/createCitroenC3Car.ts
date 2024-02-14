@@ -10,10 +10,10 @@ export function createCitroenC3Car(
     }
 ): Car {
 
-    const { color } = params;
+    const { color } = params; //const color = params.color;
 
     const car: Car = {
-        color,
+        color, //"color": color,
         "brand": "Citroen",
         "tankFillPercentage": 0, // %
         "putGaz": ({ amountEur }) => {
