@@ -11,27 +11,158 @@ export function createBankAccount(params: { initialBalance: number }): BankAccou
 
     const { initialBalance } = params;
 
+    /*
+    function withdrawAmount(params: { desiredAmount: number; }): { spendingAmount: number } {
+
+        const { desiredAmount } = params;
+
+        const spendingAmount = (() => {
+            if (desiredAmount > bankAccount.balance) {
+                console.log(`Warning : Not enough money in your account`);
+                return bankAccount.balance;
+            };
+
+            if (bankAccount.balance < 500) {
+                return desiredAmount / 2;
+            }
+
+            return desiredAmount;
+
+        })();
+
+        bankAccount.balance -= spendingAmount;
+        return { spendingAmount };
+
+    }
+    */
+
+    /*
+    const withdrawAmount = (params: { desiredAmount: number; }): { spendingAmount: number } => {
+
+        const { desiredAmount } = params;
+
+        const spendingAmount = (() => {
+            if (desiredAmount > bankAccount.balance) {
+                console.log(`Warning : Not enough money in your account`);
+                return bankAccount.balance;
+            };
+
+            if (bankAccount.balance < 500) {
+                return desiredAmount / 2;
+            }
+
+            return desiredAmount;
+
+        })();
+
+        bankAccount.balance -= spendingAmount;
+        return { spendingAmount };
+
+    }
+    */
+
+    /*
+    type WithdrawAmount= (params: { desiredAmount: number; }) => { spendingAmount: number; };
+
+    const withdrawAmount: WithdrawAmount = (params)=> {
+
+        const { desiredAmount } = params;
+
+        const spendingAmount = (() => {
+            if (desiredAmount > bankAccount.balance) {
+                console.log(`Warning : Not enough money in your account`);
+                return bankAccount.balance;
+            };
+
+            if (bankAccount.balance < 500) {
+                return desiredAmount / 2;
+            }
+
+            return desiredAmount;
+
+        })();
+
+        bankAccount.balance -= spendingAmount;
+        return { spendingAmount };
+
+    }
+    */
+
+    /*
+    const withdrawAmount: BankAccount["withdrawAmount"] = (params)=> {
+
+        const { desiredAmount } = params;
+
+        const spendingAmount = (() => {
+            if (desiredAmount > bankAccount.balance) {
+                console.log(`Warning : Not enough money in your account`);
+                return bankAccount.balance;
+            };
+
+            if (bankAccount.balance < 500) {
+                return desiredAmount / 2;
+            }
+
+            return desiredAmount;
+
+        })();
+
+        bankAccount.balance -= spendingAmount;
+        return { spendingAmount };
+
+    }
+    */
+
+    /*
+    const withdrawAmount: BankAccount["withdrawAmount"] = ({ desiredAmount })=> {
+
+        const spendingAmount = (() => {
+            if (desiredAmount > bankAccount.balance) {
+                console.log(`Warning : Not enough money in your account`);
+                return bankAccount.balance;
+            };
+
+            if (bankAccount.balance < 500) {
+                return desiredAmount / 2;
+            }
+
+            return desiredAmount;
+
+        })();
+
+        bankAccount.balance -= spendingAmount;
+        return { spendingAmount };
+
+    }
+    */
+
+
+
+
+
     const bankAccount: BankAccount = {
         "balance": initialBalance,
-        "withdrawAmount": params => {
-            const { desiredAmount } = params;
+        //withdrawAmount
+        //"withdrawAmount": withdrawAmount
+        "withdrawAmount": ({ desiredAmount }) => {
 
-            const spendingAmount = (()=> {
-                if (desiredAmount > bankAccount.balance){
+            const spendingAmount = (() => {
+                if (desiredAmount > bankAccount.balance) {
                     console.log(`Warning : Not enough money in your account`);
                     return bankAccount.balance;
                 };
 
-                if (bankAccount.balance < 500){
+                if (bankAccount.balance < 500) {
                     return desiredAmount / 2;
                 }
 
                 return desiredAmount;
 
             })();
-            
+
             bankAccount.balance -= spendingAmount;
-            return {spendingAmount};
+            return { spendingAmount };
+
         }
     }
 
