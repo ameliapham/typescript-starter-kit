@@ -63,3 +63,4 @@ const myCircle2 = new Circle2({
 
 assert<Equals<typeof myCircle, Circle>>
 
+assert<Equals<Circle, Circle2>>
