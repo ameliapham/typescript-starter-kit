@@ -63,4 +63,6 @@ const myCircle2 = new Circle2({
 
 assert<Equals<typeof myCircle, Circle>>
 
+
+// Using assert Equals to check equal of a class and a Type
 assert<Equals<Circle, Circle2>>
