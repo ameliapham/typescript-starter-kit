@@ -36,3 +36,30 @@ const myCircle = createCircle({
 assert<Equals<typeof myCircle, Circle>>
 
 
+// Create circle with class Circle 
+class Circle2 {
+    public radius: number;
+    public color: string;
+    constructor(
+        params:{
+            initialRadius: number,
+            initialColor: string
+        }
+    ) {
+        const { initialColor, initialRadius} = params;
+        this.radius= initialRadius;
+        this.color = initialColor;
+    }
+
+    public getArea(){
+        return Math.PI * this.radius ** 2;
+    }
+}
+
+const myCircle2 = new Circle2({
+    "initialColor": "blue",
+    "initialRadius": 3
+});
+
+assert<Equals<typeof myCircle, Circle>>
+
