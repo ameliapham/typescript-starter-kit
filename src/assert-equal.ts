@@ -15,3 +15,14 @@ type B = {
 assert<Equals<A, B>>
 
 
+// Using assert Equals to check equal of an element and a type
+
+const myDate = Date();
+
+const x= [1, 2, 3][0];
+
+type X = typeof x;
+
+assert<Equals<typeof x, X>>
+
+
